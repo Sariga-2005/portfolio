@@ -141,108 +141,75 @@
             font-weight: bold;
             cursor: pointer;
         }
-        <style>
-    /* Specific Fixes for the Contact UI */
-    #contactModal .modal-content {
-        background: #0b1220;
-        border: 1px solid #1e293b;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    }
 
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 15px; /* Creates consistent vertical space */
-        margin-top: 20px;
-    }
+        /* Specific Fixes for the Contact UI */
+        #contactModal .modal-content {
+            background: #0b1220;
+            border: 1px solid #1e293b;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
 
-    .input-group {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        margin-bottom: 0; /* Handled by form gap */
-    }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
 
-    .input-group label {
-        margin-bottom: 6px;
-        font-weight: 600;
-        color: #94a3b8;
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            margin-bottom: 0;
+        }
 
-    .input-group input,
-    .input-group textarea {
-        width: 100%;
-        padding: 12px;
-        border-radius: 8px;
-        border: 1px solid #1e293b;
-        background: #020617;
-        color: white;
-        font-size: 15px;
-        transition: border-color 0.3s, box-shadow 0.3s;
-        box-sizing: border-box; /* Crucial for preventing overflow */
-    }
+        .input-group label {
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #94a3b8;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-    .input-group input:focus,
-    .input-group textarea:focus {
-        border-color: #00d4ff;
-        box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2);
-        outline: none;
-    }
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #1e293b;
+            background: #020617;
+            color: white;
+            font-size: 15px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            box-sizing: border-box;
+        }
 
-    .btn-submit {
-        background: #00d4ff;
-        color: #050b16;
-        padding: 14px;
-        border-radius: 50px; /* Modern pill shape */
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: all 0.3s ease;
-        margin-top: 10px;
-    }
+        .input-group input:focus,
+        .input-group textarea:focus {
+            border-color: #00d4ff;
+            box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2);
+            outline: none;
+        }
 
-    .btn-submit:hover {
-        background: #ffffff;
-        transform: translateY(-2px);
-    }
-</style>
+        .btn-submit {
+            background: #00d4ff;
+            color: #050b16;
+            padding: 14px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
 
-<div id="contactModal" class="modal-overlay">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">×</span>
-
-        <h2 style="margin: 0; font-size: 1.6rem;">CONTACT ME</h2>
-        <p style="color:#64748b; font-size: 0.9rem; margin-top: 5px;">
-            Sending to: <span style="color: #00d4ff;">sarigarhythm@gmail.com</span>
-        </p>
-
-        <form action="https://formspree.io/f/xzdpvdoo" method="POST" class="contact-form">
-            <div class="input-group">
-                <label>Name</label>
-                <input type="text" name="name" placeholder="Enter your full name" required>
-            </div>
-
-            <div class="input-group">
-                <label>Email</label>
-                <input type="email" name="email" placeholder="example@email.com" required>
-            </div>
-
-            <div class="input-group">
-                <label>Message</label>
-                <textarea name="message" rows="4" placeholder="How can I help you?" required></textarea>
-            </div>
-
-            <input type="hidden" name="_subject" value="New Project Inquiry!">
-
-            <button type="submit" class="btn-submit">Send Message</button>
-        </form>
-    </div>
-</div>
-
+        .btn-submit:hover {
+            background: #ffffff;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 
 <body>
@@ -338,14 +305,11 @@
                 </div>
             </div>
 
-        </div>
-    </div>
-
-     <!-- ===== HEIMDALL ===== -->
-     <div class="project-card">
+            <!-- ===== SMART VIRTUAL WALLPAPER ===== -->
+            <div class="project-card">
                 <div class="project-left">
                     <h3>Smart Virtual Wallpaper</h3>
-                    <p class="tech-stack">HTML| CSS | JavaScript |</p>
+                    <p class="tech-stack">HTML | CSS | JavaScript</p>
 
                     <p class="project-desc">
                         A web-based application that allows users to realistically preview wallpaper designs on real room photos.
@@ -363,18 +327,18 @@
                         <li>Users can manually select wall regions</li>
                         <li>Apply seamless wallpaper patterns</li>
                         <li>Adjust visual parameters</li>
-                        <li>download a high-resolution final render all directly in the browser </li>
-                        
+                        <li>Download a high-resolution final render all directly in the browser</li>
                     </ul>
 
                     <p class="contributors">
                         <strong>Contributors:</strong><br>
-                        Sarigasini M <br>
-                        
+                        Sarigasini M
                     </p>
                 </div>
             </div>
 
+        </div>
+    </div>
 </section>
 
 <!-- ===== CONTACT MODAL ===== -->
@@ -382,9 +346,35 @@
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal()">×</span>
 
+        <h2 style="margin: 0; font-size: 1.6rem;">CONTACT ME</h2>
+        <p style="color:#64748b; font-size: 0.9rem; margin-top: 5px;">
+            Sending to: <span style="color: #00d4ff;">sarigarhythm@gmail.com</span>
+        </p>
+
+        <form action="https://formspree.io/f/xzdpvdoo" method="POST" class="contact-form">
+            <div class="input-group">
+                <label>Name</label>
+                <input type="text" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="example@email.com" required>
+            </div>
+
+            <div class="input-group">
+                <label>Message</label>
+                <textarea name="message" rows="4" placeholder="How can I help you?" required></textarea>
+            </div>
+
+            <input type="hidden" name="_subject" value="New Project Inquiry!">
+
+            <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+    </div>
+</div>
 
 <!-- ===== SCRIPT ===== -->
-
 <script>
     const modal = document.getElementById("contactModal");
 
@@ -403,7 +393,6 @@
         }
     };
 </script>
-    
 
 </body>
 </html>
