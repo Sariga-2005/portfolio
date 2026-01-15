@@ -1,0 +1,1111 @@
+/* GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0f1014;
+    color: #e0e0e0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(15, 16, 20, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid #333;
+}
+
+.nav-links a {
+    margin-right: 25px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #888;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #00aaff;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #fff;
+    font-weight: bold;
+}
+
+.contact-info {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* LAYOUT HELPERS */
+.full-screen-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.page-section {
+    padding: 120px 50px 50px 50px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* HOME PAGE STYLES */
+#home-bg {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 10px;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content h1 span {
+    font-weight: 800;
+    color: #fff;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    color: #ccc;
+    animation: fadeInUp 1.2s ease;
+}
+
+.buttons {
+    animation: fadeInUp 1.4s ease;
+}
+
+.btn {
+    padding: 12px 35px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    margin-right: 15px;
+    display: inline-block;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #00aaff;
+    color: #fff;
+    border-color: #00aaff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
+}
+
+.socials {
+    margin-top: 40px;
+    animation: fadeInUp 1.6s ease;
+}
+
+.socials i {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    color: #aaa;
+    transition: all 0.3s ease;
+}
+
+.socials i:hover {
+    color: #00aaff;
+    transform: scale(1.2);
+}
+
+/* ABOUT PAGE STYLES */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 2px solid #333;
+    transition: all 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+    border-color: #00aaff;
+    box-shadow: 0 15px 40px rgba(0, 170, 255, 0.3);
+}
+
+.highlight {
+    color: #00aaff;
+    font-weight: bold;
+}
+
+.details-list p {
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+/* RESUME PAGE STYLES */
+.resume-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+h2, h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.skill-box {
+    margin-bottom: 20px;
+}
+
+.skill-box p {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: #ddd;
+}
+
+.progress-bar {
+    background: #222;
+    height: 4px;
+    width: 100%;
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress {
+    background: linear-gradient(90deg, #00aaff, #0088cc);
+    height: 100%;
+    position: relative;
+    transition: width 1s ease;
+}
+
+.timeline-item {
+    border-left: 2px solid #333;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+    border-left-color: #00aaff;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background: #00aaff;
+    border-radius: 50%;
+}
+
+.year {
+    background: #00aaff;
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    color: #fff;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.what-list li {
+    margin-bottom: 12px;
+    color: #bbb;
+    border-bottom: 1px solid #222;
+    padding-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.what-list li:hover {
+    color: #fff;
+    border-bottom-color: #00aaff;
+    padding-left: 5px;
+}
+
+.small-text {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+/* PORTFOLIO PAGE STYLES */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: #16181d;
+    padding: 30px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid #222;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #00aaff;
+    box-shadow: 0 10px 30px rgba(0, 170, 255, 0.2);
+}
+
+.tech-stack {
+    color: #00aaff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* BACK TO TOP BUTTON */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #00aaff;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
+}
+
+#backToTop:hover {
+    background: #0088cc;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 170, 255, 0.6);
+}
+
+#backToTop.show {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .resume-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-links a {
+        margin: 5px 10px;
+    }
+    
+    .contact-info {
+        text-align: center;
+    }
+    
+    .full-screen-section {
+        padding: 0 20px;
+    }
+    
+    .page-section {
+        padding: 100px 20px 50px 20px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .about-image {
+        text-align: center;
+    }
+    
+    .resume-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn {
+        padding: 10px 25px;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    nav {
+        padding: 10px 15px;
+    }
+    
+    .nav-links a {
+        font-size: 0.8rem;
+        margin: 3px 8px;
+    }
+    
+    #backToTop {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 16px;
+        font-size: 1rem;
+    }
+}
+/* --- NEW ABOUT PAGE STYLES --- */
+
+/* 1. Split Layout */
+.about-split-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    padding-top: 20px;
+    flex-wrap: wrap; /* Responsive wrapping */
+}
+
+.about-text-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+}
+
+/* 2. Typography Updates */
+.greeting {
+    color: #00d2ff; /* Cyan Accent */
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.main-heading {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.main-heading span {
+    color: #aaa; /* Slightly dimmer for the second line */
+}
+
+.bio-text {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    font-size: 1rem;
+    max-width: 500px;
+}
+
+/* 3. The Stats Row (Mini Version) */
+.stats-row-mini {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+/* The Circular Progress Bar Style */
+.circle-progress-mini {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* Cyan Conic Gradient representing 6.5/10 */
+    background: conic-gradient(#00d2ff 65%, #222 0deg); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.circle-progress-mini::before {
+    content: '';
+    width: 70px;
+    height: 70px;
+    background-color: #0f1014; /* Match background color */
+    border-radius: 50%;
+    position: absolute;
+}
+
+.stat-value {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.stat-value .small { font-size: 0.7rem; color: #888; }
+.plus { color: #00d2ff; }
+.big-number { font-size: 2.5rem; font-weight: bold; color: #fff; }
+
+/* 4. The Photo with Neon Arcs (Reference Style) */
+.arc-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2;
+    border: 5px solid #16181d; /* Dark border separating img from arcs */
+}
+
+/* Purple Arc (Top Left) */
+.arc-container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #a020f0; /* Purple */
+    border-left-color: #a020f0;
+    transform: rotate(-25deg);
+    z-index: 1;
+    transition: transform 0.5s ease;
+}
+
+/* Cyan Arc (Bottom Right) */
+.arc-container::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-bottom-color: #00d2ff; /* Cyan */
+    border-right-color: #00d2ff;
+    transform: rotate(-25deg);
+    z-index: 1;
+    transition: transform 0.5s ease;
+}
+
+/* Hover Effect: Rotate Arcs */
+.arc-container:hover::before { transform: rotate(10deg) scale(1.05); }
+.arc-container:hover::after { transform: rotate(10deg) scale(1.05); }
+
+/* 5. Button Styles */
+.buttons-row {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary {
+    background: #00d2ff;
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #fff;
+    color: #000;
+}
+/* --- CONTACT MODAL STYLES --- */
+
+/* Top Right Button Style */
+.btn-contact-nav {
+    background: #00d2ff;
+    color: #000;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.btn-contact-nav:hover {
+    background: #fff;
+    transform: scale(1.05);
+}
+
+/* Modal Background (Overlay) */
+/* ===== Contact Modal ===== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #0b1220;
+    padding: 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    color: white;
+    position: relative;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+}
+
+.modal-content h2 {
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.send-to {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-btn:hover {
+    color: white;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #222;
+    background: #050b16;
+    color: white;
+    outline: none;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #666;
+}
+
+.btn-submit {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    background: #00d4ff;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.btn-submit:hover {
+    background: #00bfe6;
+}
+
+
+
+/* Simple Fade Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* =====================================
+   RESUME PAGE – MATCH PROJECTS STYLE
+===================================== */
+
+/* Resume grid spacing */
+.resume-grid {
+    gap: 30px;
+}
+
+/* Each resume column becomes a card */
+.resume-grid .col {
+    background: #16181d;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #222;
+    transition: all 0.3s ease;
+}
+
+.resume-grid .col:hover {
+    transform: translateY(-8px);
+    border-color: #00aaff;
+    box-shadow: 0 10px 30px rgba(0, 170, 255, 0.2);
+}
+
+/* Section headings */
+.resume-grid h3 {
+    color: #00aaff;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* Remove old timeline line */
+.timeline-item {
+    border-left: none;
+    padding-left: 0;
+    background: #0f1014;
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid #222;
+    margin-bottom: 20px;
+}
+
+.timeline-item::before {
+    display: none;
+}
+
+/* Year badge */
+.year {
+    background: transparent;
+    color: #00aaff;
+    padding: 0;
+    font-size: 0.75rem;
+    margin-bottom: 6px;
+}
+
+/* Highlight text */
+.highlight {
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+/* Lists match projects */
+.what-list li {
+    border-bottom: none;
+    padding-bottom: 0;
+    font-size: 0.85rem;
+}
+
+.what-list li:hover {
+    padding-left: 0;
+    color: #fff;
+}
+
+/* Skill cards */
+.skill-box {
+    background: #0f1014;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #222;
+}
+
+/* Progress bars */
+.progress-bar {
+    height: 5px;
+}
+
+.progress {
+    background: linear-gradient(90deg, #00aaff, #00ffd5);
+}
+
+/* Center RESUME heading section */
+.resume-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Center the RESUME title */
+.resume-header h2 {
+    text-align: center;
+    width: 100%;
+}
+
+/* Center the contact info line */
+.resume-header p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+}
+
+/* ===============================================
+   ✨ NEW ENHANCED FEATURES (BASED ON REFERENCE)
+================================================ */
+
+/* 1. NUMBERED SECTIONS WITH GRADIENT NUMBERS */
+.numbered-section {
+    position: relative;
+    padding: 80px 50px;
+}
+
+.section-number {
+    font-size: 5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #00d2ff 0%, #a020f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.15;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    line-height: 1;
+    z-index: 0;
+}
+
+.section-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* 2. FEATURE CARDS WITH ICONS */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background: linear-gradient(135deg, #16181d 0%, #1a1c24 100%);
+    padding: 40px 30px;
+    border-radius: 16px;
+    border: 1px solid #222;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00d2ff, #a020f0);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: #00d2ff;
+    box-shadow: 0 15px 40px rgba(0, 210, 255, 0.2);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #00d2ff, #a020f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.feature-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.feature-card p {
+    color: #aaa;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* 3. GLOWING TEXT EFFECTS */
+.glow-text {
+    color: #00d2ff;
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5),
+                 0 0 20px rgba(0, 210, 255, 0.3),
+                 0 0 30px rgba(0, 210, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.glow-text:hover {
+    text-shadow: 0 0 15px rgba(0, 210, 255, 0.8),
+                 0 0 30px rgba(0, 210, 255, 0.6),
+                 0 0 45px rgba(0, 210, 255, 0.4);
+}
+
+/* 4. ANIMATED GRADIENT BORDERS */
+.gradient-border {
+    position: relative;
+    background: #16181d;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, #00d2ff, #a020f0, #00d2ff);
+    border-radius: 12px;
+    z-index: -1;
+    background-size: 300% 300%;
+    animation: gradientMove 4s ease infinite;
+}
+
+@keyframes gradientMove {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* 5. SKILL TAGS/BADGES */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.skill-tag {
+    background: rgba(0, 210, 255, 0.1);
+    color: #00d2ff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: rgba(0, 210, 255, 0.2);
+    border-color: #00d2ff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.2);
+}
+
+/* 6. PARALLAX SECTIONS */
+.parallax-section {
+    position: relative;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.parallax-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(15, 16, 20, 0.9));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 7. ANIMATED UNDERLINES */
+.animated-link {
+    position: relative;
+    display: inline-block;
+    color: #00d2ff;
+    font-weight: 600;
+}
+
+.animated-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #00d2ff, #a020f0);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+.animated-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* 8. CARD FLIP EFFECT */
+.flip-card {
+    perspective: 1000px;
+    height: 300px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 30px;
+    background: #16181d;
+    border: 1px solid #222;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #16181d, #1a1c24);
+}
+
+/* 9. SCROLL REVEAL ANIMATIONS */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease;
+}
+
+.scroll-reveal-left.active {
+    opacity: 1;

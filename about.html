@@ -1,0 +1,257 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | M Sarigasini</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<style>
+        /* Specific Styles for the About Page Contact UI */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85); /* Darker overlay for focus */
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .modal-content {
+            background: #0b1220; /* Matches your about-split-layout background */
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 450px;
+            color: white;
+            position: relative;
+            border: 1px solid #1e293b;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #64748b;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #00d4ff;
+        }
+
+        .modal-content h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        .send-to {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            margin-top: 5px;
+        }
+
+        .send-to span {
+            color: #00d4ff;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .input-group label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #94a3b8;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: #020617;
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .input-group input:focus,
+        .input-group textarea:focus {
+            border-color: #00d4ff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.15);
+        }
+
+        .btn-submit {
+            background: #00d4ff;
+            color: #020617;
+            padding: 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        .btn-submit:hover {
+            background: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 212, 255, 0.3);
+        }
+    </style>
+
+    <div id="contactModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">×</span>
+
+            <h2>CONTACT ME</h2>
+            <p class="send-to">Sending to: <span>sarigarhythm@gmail.com</span></p>
+
+            <form action="https://formspree.io/f/xzdpvdoo" method="POST" class="contact-form">
+                <div class="input-group">
+                    <label>Name</label>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Message</label>
+                    <textarea name="message" rows="4" placeholder="How can I help you?" required></textarea>
+                </div>
+
+                <input type="hidden" name="_subject" value="New Contact from About Page">
+
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    
+<body>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="resume.html">Resume</a>
+            <a href="projects.html">Projects</a>
+        </div>
+        
+        <div class="nav-right">
+            <button class="btn-contact-nav" onclick="openModal()">Contact Me</button>
+        </div>
+    </nav>
+
+    <section class="page-section">
+        <div class="container">
+            
+            <div class="about-split-layout">
+                
+                <div class="about-text-content">
+                    <p class="greeting">Hello, I'm Sarigasini M</p>
+                    
+                    <h2 class="main-heading">Java Developer <br><span>& Full Stack Engineer</span></h2>
+                    
+                    <p class="bio-text">
+                        I am a third-year B.Tech Computer Science student at <strong>Amrita Vishwa Vidyapeetham</strong> (CGPA 7.5).
+                        <br><br>
+                        My focus is on <strong>Java Development</strong> and building scalable <strong>Full Stack</strong> applications. 
+                        With a strong foundation in Data Structures, SQL, and React.js, I aim to build robust software solutions that solve real-world problems.
+                    </p>
+
+                    <div class="stats-row-mini">
+                        <div class="stat-item">
+                            <div class="circle-progress-mini">
+                                <span class="stat-value">7.5<span class="small">/10</span></span>
+                            </div>
+                            <p class="stat-label">CGPA Score</p>
+                        </div>
+
+                        <div class="stat-item">
+                            <div class="big-number">4<span class="plus">+</span></div>
+                            <p class="stat-label">Projects</p>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <div class="big-number">3<span class="plus">Months</span></div>
+                            <p class="stat-label">Internship</p>
+                        </div>
+                    </div>
+
+                    <div class="buttons-row">
+                        <a href="CB.SC.U4CSE23065.pdf" class="btn btn-primary">Download CV <i class="fas fa-download"></i></a>
+                        <a href="projects.html" class="btn btn-outline">View Work</a>
+                    </div>
+                </div>
+
+                <div class="about-image-content">
+                    <div class="arc-container">
+                        <img src="profilepic.jpeg" alt="Sarigasini M" class="profile-img">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== CONTACT MODAL ===== -->
+
+
+            
+
+    <button id="backToTop" title="Go to top">↑</button>
+
+    <script>
+        const modal = document.getElementById("contactModal");
+        
+        function openModal() {
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden"; // Prevent background scroll when modal is open
+        }
+        
+        function closeModal() {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Re-enable scroll
+        }
+        
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

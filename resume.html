@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume of Sarigasini M - Front-End Developer with experience in React, JavaScript, and web development">
+    <meta name="keywords" content="resume, cv, web developer, frontend developer">
+    <title>Resume | Sarigasini M</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ===== Updated Contact Modal UI ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #0b1220;
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 450px;
+            color: white;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            border: 1px solid #1e293b;
+        }
+
+        .modal-content h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        .send-to {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            margin-top: 5px;
+        }
+
+        .send-to span {
+            color: #00d4ff;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #64748b;
+            transition: 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #00d4ff;
+        }
+
+        /* Form Layout */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #1e293b;
+            background: #020617;
+            color: white;
+            outline: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .input-group input:focus,
+        .input-group textarea:focus {
+            border-color: #00d4ff;
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.15);
+        }
+
+        .btn-submit {
+            width: 100%;
+            margin-top: 10px;
+            padding: 15px;
+            background: #00d4ff;
+            color: #020617;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 212, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="resume.html" class="active">Resume</a>
+            <a href="projects.html">Projects</a>
+        </div>
+        
+        <div class="nav-right">
+            <button class="btn-contact-nav" onclick="openModal()">Contact Me</button>
+        </div>
+    </nav>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="resume-header" style="margin-bottom: 40px;">
+                <h2>RESUME</h2>
+                <p style="color: #aaa;">Sarigasini M | +91 9080200281 | Theni, India | sarigarhythm@gmail.com</p>
+            </div>
+
+            <div class="resume-grid">
+                <div class="col">
+                    <h3>EXPERIENCE</h3>
+                    <div class="timeline-item">
+                        <div class="year">May 2025 - June 2025</div>
+                        <h4>Frontend Dev Intern</h4>
+                        <p class="highlight">1stop.ai (Remote)</p>
+                        <br>
+                        <ul class="what-list">
+                            <li>Developed a Professional Portfolio Website with advanced animations.</li>
+                            <li>Built a Personal Finance Tracker using Bootstrap 5.</li>
+                            <li>Engineered a CRUD Task Management System with JavaScript & jQuery.</li>
+                        </ul>
+                    </div>
+
+                    <br>
+                    <h3>LEADERSHIP</h3>
+                    <ul class="what-list">
+                        <li><strong>Class Representative:</strong> Liaison between students and faculty (3rd Year).</li>
+                    </ul>
+
+                    <h3>ACHIEVEMENTS</h3>
+                    <ul class="what-list">
+                        <li><strong>National Spelling Bee:</strong> Secured National Level Award.</li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h3>EDUCATION</h3>
+                    <div class="timeline-item">
+                        <div class="year">2023 - 2027</div>
+                        <h4>B.Tech CSE</h4>
+                        <p>Amrita Vishwa Vidyapeetham</p>
+                        <p class="small-text">CGPA: 7.5</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">2020 - 2023</div>
+                        <h4>Higher Secondary</h4>
+                        <p>Santinikitan Public School</p>
+                        <p class="small-text">12th: 87.5% | 10th: 95%</p>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <h3>TECHNICAL SKILLS</h3>
+                    <div class="skill-box">
+                        <p>Java, C, C++, Python</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-box">
+                        <p>React.JS, HTML, CSS, JS</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-box">
+                        <p>SQL, MongoDB</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <h3>CERTIFICATIONS</h3>
+                    <ul class="what-list">
+                        <li>Web Development Front-End (IIT Guwahati & 1stop.ai)</li>
+                        <li>Industrial Program in Web Dev (Raise Digital)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="contactModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">×</span>
+
+            <h2>CONTACT ME</h2>
+            <p class="send-to">Sending to: <span>sarigarhythm@gmail.com</span></p>
+
+            <form action="https://formspree.io/f/xzdpvdoo" method="POST" class="contact-form">
+                <div class="input-group">
+                    <label>Name</label>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Message</label>
+                    <textarea name="message" rows="4" placeholder="How can I help you?" required></textarea>
+                </div>
+
+                <input type="hidden" name="_subject" value="New Resume Inquiry">
+
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <button id="backToTop" title="Go to top" aria-label="Back to top">↑</button>
+
+    <script>
+        const modal = document.getElementById("contactModal");
+        
+        function openModal() {
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden"; // Prevent background scroll
+        }
+        
+        function closeModal() {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+        
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
